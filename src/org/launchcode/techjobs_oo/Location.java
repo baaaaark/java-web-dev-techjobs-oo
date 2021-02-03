@@ -20,7 +20,6 @@ public class Location {
         setValue(value);
     }
 
-
     // Custom toString, equals, and hashCode methods:
 
     @Override
