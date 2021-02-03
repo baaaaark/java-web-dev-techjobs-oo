@@ -18,21 +18,48 @@ public class Job {
     //  the 'id' field.
 
     public Job() {
-        id = nextId;
+        this.id = nextId;
         nextId++;
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        this.id = getId();
-        this.name = getName();
-        this.employer = getEmployer();
-        this.location = getLocation();
-        this.positionType = getPositionType();
-        this.coreCompetency = getCoreCompetency();
+        this();
+        this.setName(name);
+        this.setEmployer(employer);
+        this.setLocation(location);
+        this.setPositionType(positionType);
+        this.setCoreCompetency(coreCompetency);
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Job job = (Job) o;
+
+        if (id != job.id) return false;
+        if (!name.equals(job.name)) return false;
+        if (!employer.equals(job.employer)) return false;
+        if (!location.equals(job.location)) return false;
+        if (!positionType.equals(job.positionType)) return false;
+        return coreCompetency.equals(job.coreCompetency);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + name.hashCode();
+        result = 31 * result + employer.hashCode();
+        result = 31 * result + location.hashCode();
+        result = 31 * result + positionType.hashCode();
+        result = 31 * result + coreCompetency.hashCode();
+        return result;
+    }
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
