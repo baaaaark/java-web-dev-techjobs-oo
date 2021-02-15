@@ -39,8 +39,6 @@ public class Job {
     @Override
     public String toString() {
 
-
-
         String id = "ID: " + getId() + '\n';
         String nam = "Name: " + ((getName().isBlank()) ? "Data not available" : getName()) + '\n';
         String emp = "Employer: " + ((getEmployer().toString().isBlank()) ? "Data not available" : getEmployer()) + '\n';
@@ -49,7 +47,6 @@ public class Job {
         String com = "Core Competency: " + ((getCoreCompetency().toString().isBlank()) ? "Data not available" : getCoreCompetency()) + '\n';
 
         return '\n' + id + nam + emp + loc + pos + com;
-
 
     }
 

@@ -69,8 +69,12 @@ public class JobTest {
 
     @Test
     public void testForEmptyFields() {
-        assertEquals("\nID: 5" + "\nName: Data not available" + "\nEmployer: Data not available" + "\nLocation: Wakanda" +
-                "\nPosition Type: Product testing" + "\nCore Competency: Metallurgy\n", emptyField.toString());
+        assertEquals("\nID: 5" +
+                              "\nName: Data not available" +
+                              "\nEmployer: Data not available" +
+                              "\nLocation: Wakanda" +
+                              "\nPosition Type: Product testing" +
+                              "\nCore Competency: Metallurgy\n", emptyField.toString());
     }
     //if a job object only contains an id, the method should return "OOPS! This job does not seem to exist."
 

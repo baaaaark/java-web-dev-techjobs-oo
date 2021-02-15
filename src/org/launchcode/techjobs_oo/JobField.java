@@ -19,27 +19,23 @@ public class JobField {
         setValue(value);
     }
 
-    //Overrides
-
     @Override
     public String toString() {
-        return value;
+        return getValue();
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Employer)) return false;
-        Employer employer = (Employer) o;
-        return getId() == employer.getId();
+        if (!(o instanceof JobField)) return false;
+        JobField job = (JobField) o;
+        return getId() == job.getId();
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getId());
     }
-
-    // Getters and Setters:
 
     public int getId() {
         return id;
